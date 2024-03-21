@@ -5,3 +5,10 @@ edition = "2021"
 
 [dependencies]
 num-traits = "0.2"
+
+[dev-dependencies]
+trybuild = "1.0"
+
+[[test]]
+name = "broadcast"
+path = "tests/broadcast.rs"

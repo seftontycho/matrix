@@ -43,7 +43,7 @@ where
 
 impl<T, const A: usize, const B: usize> Add for Array2<T, A, B>
 where
-    T: Num + Add<Output = T> + Copy,
+    T: Add<Output = T> + Copy,
 {
     type Output = Self;
 
@@ -57,7 +57,7 @@ where
 
 impl<T, const A: usize, const B: usize> Sub<T> for Array2<T, A, B>
 where
-    T: Num + Sub<Output = T> + Copy,
+    T: Sub<Output = T> + Copy,
 {
     type Output = Self;
 

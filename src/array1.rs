@@ -9,11 +9,11 @@ use crate::{
 };
 
 #[derive(Debug, Clone, PartialEq, Eq, Copy)]
-pub struct Array1<T: Num, const A: usize> {
+pub struct Array1<T, const A: usize> {
     pub(crate) data: [T; A],
 }
 
-impl<T: Num, const A: usize> From<[T; A]> for Array1<T, A> {
+impl<T, const A: usize> From<[T; A]> for Array1<T, A> {
     fn from(data: [T; A]) -> Self {
         Self { data }
     }

@@ -50,3 +50,9 @@ pub trait Reshape: Sized {
 }
 
 impl<T> Reshape for T {}
+
+pub trait BinaryOp<T, U> {
+    type Output;
+
+    fn op(a: T, b: U) -> Self::Output;
+}
