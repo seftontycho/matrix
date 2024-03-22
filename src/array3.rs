@@ -11,7 +11,7 @@ use crate::{
 
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub struct Array3<T, const A: usize, const B: usize, const C: usize> {
-    data: [[[T; C]; B]; A],
+    pub(crate) data: [[[T; C]; B]; A],
 }
 
 impl<T, const A: usize, const B: usize, const C: usize> From<[[[T; C]; B]; A]>

@@ -1,0 +1,131 @@
+error[E0631]: type mismatch in function arguments
+  --> tests/broadcast/array3_fail.rs:44:28
+   |
+44 |     let c = a.broadcast(b, op);
+   |               ---------    ^^
+   |               |            |
+   |               |            expected due to this
+   |               |            found signature defined here
+   |               required by a bound introduced by this call
+   |
+   = note: expected function signature `for<'a, 'b> fn(&'a _, &'b matrix::prelude::Array1<{integer}, 5>) -> _`
+              found function signature `for<'a, 'b> fn(&'a _, &'b i32) -> _`
+note: required by a bound in `broadcast`
+  --> src/broadcast.rs
+   |
+   |     fn broadcast(self, rhs: Rhs, op: impl Fn(&T, &U) -> V) -> Self::Output;
+   |                                           ^^^^^^^^^^^^^^^ required by this bound in `Broadcast::broadcast`
+help: consider wrapping the function in a closure
+   |
+44 |     let c = a.broadcast(b, |arg0: &i32, arg1| op(arg0, /* &i32 */));
+   |                            ++++++++++++++++++   ++++++++++++++++++
+
+error[E0631]: type mismatch in function arguments
+  --> tests/broadcast/array3_fail.rs:66:28
+   |
+66 |     let c = a.broadcast(b, op);
+   |               ---------    ^^
+   |               |            |
+   |               |            expected due to this
+   |               |            found signature defined here
+   |               required by a bound introduced by this call
+   |
+   = note: expected function signature `for<'a, 'b> fn(&'a _, &'b matrix::prelude::Array2<{integer}, 5, 4>) -> _`
+              found function signature `for<'a, 'b> fn(&'a _, &'b i32) -> _`
+note: required by a bound in `broadcast`
+  --> src/broadcast.rs
+   |
+   |     fn broadcast(self, rhs: Rhs, op: impl Fn(&T, &U) -> V) -> Self::Output;
+   |                                           ^^^^^^^^^^^^^^^ required by this bound in `Broadcast::broadcast`
+help: consider wrapping the function in a closure
+   |
+66 |     let c = a.broadcast(b, |arg0: &i32, arg1| op(arg0, /* &i32 */));
+   |                            ++++++++++++++++++   ++++++++++++++++++
+
+error[E0631]: type mismatch in function arguments
+  --> tests/broadcast/array3_fail.rs:82:28
+   |
+82 |     let c = a.broadcast(b, op);
+   |               ---------    ^^
+   |               |            |
+   |               |            expected due to this
+   |               |            found signature defined here
+   |               required by a bound introduced by this call
+   |
+   = note: expected function signature `for<'a, 'b> fn(&'a _, &'b matrix::prelude::Array2<{integer}, 3, 5>) -> _`
+              found function signature `for<'a, 'b> fn(&'a _, &'b i32) -> _`
+note: required by a bound in `broadcast`
+  --> src/broadcast.rs
+   |
+   |     fn broadcast(self, rhs: Rhs, op: impl Fn(&T, &U) -> V) -> Self::Output;
+   |                                           ^^^^^^^^^^^^^^^ required by this bound in `Broadcast::broadcast`
+help: consider wrapping the function in a closure
+   |
+82 |     let c = a.broadcast(b, |arg0: &i32, arg1| op(arg0, /* &i32 */));
+   |                            ++++++++++++++++++   ++++++++++++++++++
+
+error[E0631]: type mismatch in function arguments
+   --> tests/broadcast/array3_fail.rs:104:28
+    |
+104 |     let c = a.broadcast(b, op);
+    |               ---------    ^^
+    |               |            |
+    |               |            expected due to this
+    |               |            found signature defined here
+    |               required by a bound introduced by this call
+    |
+    = note: expected function signature `for<'a, 'b> fn(&'a _, &'b matrix::prelude::Array3<{integer}, 5, 3, 4>) -> _`
+               found function signature `for<'a, 'b> fn(&'a _, &'b i32) -> _`
+note: required by a bound in `broadcast`
+   --> src/broadcast.rs
+    |
+    |     fn broadcast(self, rhs: Rhs, op: impl Fn(&T, &U) -> V) -> Self::Output;
+    |                                           ^^^^^^^^^^^^^^^ required by this bound in `Broadcast::broadcast`
+help: consider wrapping the function in a closure
+    |
+104 |     let c = a.broadcast(b, |arg0: &i32, arg1| op(arg0, /* &i32 */));
+    |                            ++++++++++++++++++   ++++++++++++++++++
+
+error[E0631]: type mismatch in function arguments
+   --> tests/broadcast/array3_fail.rs:135:28
+    |
+135 |     let c = a.broadcast(b, op);
+    |               ---------    ^^
+    |               |            |
+    |               |            expected due to this
+    |               |            found signature defined here
+    |               required by a bound introduced by this call
+    |
+    = note: expected function signature `for<'a, 'b> fn(&'a _, &'b matrix::prelude::Array3<{integer}, 2, 5, 4>) -> _`
+               found function signature `for<'a, 'b> fn(&'a _, &'b i32) -> _`
+note: required by a bound in `broadcast`
+   --> src/broadcast.rs
+    |
+    |     fn broadcast(self, rhs: Rhs, op: impl Fn(&T, &U) -> V) -> Self::Output;
+    |                                           ^^^^^^^^^^^^^^^ required by this bound in `Broadcast::broadcast`
+help: consider wrapping the function in a closure
+    |
+135 |     let c = a.broadcast(b, |arg0: &i32, arg1| op(arg0, /* &i32 */));
+    |                            ++++++++++++++++++   ++++++++++++++++++
+
+error[E0631]: type mismatch in function arguments
+   --> tests/broadcast/array3_fail.rs:158:28
+    |
+158 |     let c = a.broadcast(b, op);
+    |               ---------    ^^
+    |               |            |
+    |               |            expected due to this
+    |               |            found signature defined here
+    |               required by a bound introduced by this call
+    |
+    = note: expected function signature `for<'a, 'b> fn(&'a _, &'b matrix::prelude::Array3<{integer}, 2, 3, 5>) -> _`
+               found function signature `for<'a, 'b> fn(&'a _, &'b i32) -> _`
+note: required by a bound in `broadcast`
+   --> src/broadcast.rs
+    |
+    |     fn broadcast(self, rhs: Rhs, op: impl Fn(&T, &U) -> V) -> Self::Output;
+    |                                           ^^^^^^^^^^^^^^^ required by this bound in `Broadcast::broadcast`
+help: consider wrapping the function in a closure
+    |
+158 |     let c = a.broadcast(b, |arg0: &i32, arg1| op(arg0, /* &i32 */));
+    |                            ++++++++++++++++++   ++++++++++++++++++

@@ -10,6 +10,7 @@ mod ops;
 pub mod prelude {
     pub use crate::array1::*;
     pub use crate::array2::*;
+    pub use crate::array3::*;
     pub use crate::broadcast::*;
     pub use crate::ops::{Concat, MatMul, Squeeze, UnSqueeze};
 }
